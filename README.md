@@ -80,6 +80,28 @@ Real-world data (GFS analysis)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
+### Install Git LFS
+
+The WRF output file (`results/wrfout_d02_selcomb022.nc`) is large and stored in this repository using [Git Large File Storage (LFS)](https://git-lfs.com/). You must install Git LFS before cloning so the actual file is downloaded instead of a pointer.
+
+**macOS (Homebrew):**
+```bash
+brew install git-lfs
+```
+
+**Ubuntu/Debian:**
+```bash
+sudo apt install git-lfs
+```
+
+**Windows:** Download the installer from [git-lfs.com](https://git-lfs.com/).
+
+After installing, activate LFS for your user account (only needed once per machine):
+
+```bash
+git lfs install
+```
+
 ### Clone and install
 
 ```bash
@@ -135,7 +157,7 @@ wrf/
 │   ├── namelist.wps       # WPS namelist
 │   └── namelist.input     # WRF namelist
 ├── results/
-│   └── wrfout_d02_*.nc    # WRF output (not tracked in git)
+│   └── wrfout_d02_*.nc    # WRF output (tracked via Git LFS)
 ├── graphs/                # Generated figures (PDF)
 ├── pyproject.toml
 └── uv.lock
