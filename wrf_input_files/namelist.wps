@@ -1,0 +1,43 @@
+&share
+ wrf_core = 'ARW',
+ max_dom = 2,
+ start_date = '2019-09-04_12:00:00','2019-09-04_12:00:00',
+ end_date   = '2019-09-06_12:00:00','2019-09-06_12:00:00',
+ interval_seconds = 10800
+ io_form_geogrid      = 2
+ debug_level          = 0
+/
+
+
+&geogrid
+ parent_id            = 1, 1
+ parent_grid_ratio    = 1, 3
+ i_parent_start       = 1, 6
+ j_parent_start       = 1, 6
+ e_we                 = 57, 139
+ e_sn                 = 52, 124
+ geog_data_res        = 'default', 'default'
+ dx                   = 12000
+ dy                   = 12000
+ map_proj             = 'polar'
+ ref_lat              = 47.572
+ ref_lon              = -52.734
+ truelat1             = 47.572
+ pole_lat             = 90
+ pole_lon             = 0
+ stand_lon            = -52.734
+ geog_data_path       = '/Users/Vahid/WRF/WPS/WPS_GEOG_DATA/WPS_GEOG/'
+ opt_geogrid_tbl_path = './geogrid/'
+/
+
+
+&ungrib
+ out_format = 'WPS',
+ prefix = 'GFS'
+/
+
+&metgrid
+ fg_name              = 'GFS'
+ io_form_metgrid      = 2
+ opt_metgrid_tbl_path = './metgrid'
+/
