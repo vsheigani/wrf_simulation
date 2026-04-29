@@ -165,6 +165,8 @@ wrf/
 
 ## References
 
-- Skamarock, W. C., et al. (2019). *A Description of the Advanced Research WRF Model Version 4*. NCAR Tech. Note NCAR/TN-556+STR. [doi:10.5065/1dfh-6p97](https://doi.org/10.5065/1dfh-6p97)
-- Maussion, F., et al. (2017). *Salem: a Python library for geoscientific data processing*. [salem.readthedocs.io](https://salem.readthedocs.io/)
-- WRF Users' Guide: [www2.mmm.ucar.edu/wrf/users/docs](https://www2.mmm.ucar.edu/wrf/users/docs/user_guide_v4/contents.html)
+- National Centre for Atmospheric Research. *User's Guide for Advanced Research WRF (ARW) Modeling System Version 2.2*. June 2007. url: https://homepages.see.leeds.ac.uk/~lecrrb/wrf/aRWUsersGuide.pdf (visited on 04/16/2024).
+- George D. Greenwade. "The Comprehensive Tex Archive Network (CTAN)". In: *TUGBoat* 14.3 (1993), pp. 342–351.
+- W. C. Skamarock et al. "A Description of the Advanced Research WRF Version 3". In: (2008). doi: [10.5065/D68S4MVH](https://doi.org/10.5065/D68S4MVH).
+- University of Waterloo. *WRF Tutorial*. June 27, 2019. url: https://wiki.math.uwaterloo.ca/fluidswiki/index.php?title=WRF_Tutorial (visited on 04/16/2024).
+- Louis J. Wicker and William C. Skamarock. "Time-Splitting Methods for Elastic Models Using Forward Time Schemes". In: *Monthly Weather Review* 130.8 (2002), pp. 2088–2097. doi: [10.1175/1520-0493(2002)130\<2088:TSMFEM\>2.0.CO;2](https://journals.ametsoc.org/view/journals/mwre/130/8/1520-0493_2002_130_2088_tsmfem_2.0.co_2.xml).
