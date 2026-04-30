@@ -130,7 +130,7 @@ uv sync
 ### Run the Jupyter notebook
 
 ```bash
-uv run jupyter notebook wrf_end.ipynb
+uv run jupyter notebook wrf_postprocessing.ipynb
 ```
 
 The notebook expects the WRF output file at:
@@ -162,6 +162,48 @@ wrf/
 ├── pyproject.toml
 └── uv.lock
 ```
+
+## Running WPS and WRF on Compute Canada (Nibi Cluster)
+
+At the time of writing, the available versions on the Nibi cluster are `wps/4.6.0` and `wrf/4.6.1`. Check for the latest available versions with:
+
+```bash
+module spider wrf
+module spider wps
+```
+
+### Loading precompiled modules and copying working directories
+
+Load the modules and copy the pre-built WRF and WPS directories into your working location:
+
+```bash
+module load wrf/4.6.1
+module load wps/4.6.0
+
+cp -r $EBROOTWRF .
+cp -r $EBROOTWPS .
+```
+
+### Running WPS
+
+Set up the WPS configuration (domain, input data, variable tables) as described in [`wrf_paper.pdf`](wrf_paper.pdf) and the [WPS documentation](https://github.com/wrf-model/WPS). Once configured, submit a job script that runs the WPS executables using `srun`:
+
+```bash
+srun ./geogrid.exe
+srun ./ungrib.exe
+srun ./metgrid.exe
+```
+
+### Running WRF
+
+After setting up the WRF experiment directory as described in [`wrf_paper.pdf`](wrf_paper.pdf), run `real.exe` to generate the initial and boundary condition files, then launch the simulation:
+
+```bash
+srun ./real.exe
+srun ./wrf.exe
+```
+
+Both steps should be submitted via SLURM job scripts using your allocation account.
 
 ## References
 
